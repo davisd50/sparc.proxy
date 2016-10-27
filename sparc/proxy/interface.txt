@@ -1,0 +1,42 @@
+=======================
+Zope Interface Proxies
+=======================
+
+Python builtin proxy
+--------------------
+Python built-in objects can not be assigned (alsoProvides, directlyProvides, 
+etc) as interface providers due to the non-mutable nature of their
+attribute sets (you can not add dynamic attributes to a Python built-in).
+We can get around this in a fairly natural nature leveraging the 
+zope.proxy package.  sparc.proxy provides a component to directly support
+this use-case
+
+Lets create a basic marker interface
+>>> from zope import component
+>>> from zope import interface
+>>> class IA(interface.Interface):
+...     pass
+
+Attempting to mark a Python builtin results in an exception
+>>> mybuiltin = {}
+>>> interface.alsoProvides(mybuiltin, IA)
+Traceback (most recent call last):
+...
+AttributeError: 'dict' object has no attribute '__provides__'
+
+>>> from sparc.proxy import IZopeInterfaceProviderProxy
+>>> provider = component.getUtility(IZopeInterfaceProviderProxy)
+>>> p = component.getUtility(IZopeInterfaceProviderProxy)(mybuiltin)
+>>> interface.alsoProvides(p, IA)
+>>> IA.providedBy(p)
+True
+
+We can also apply this to other Python built-in types
+>>> def my_func():
+...     return True
+>>> pf = provider(my_func)
+>>> interface.alsoProvides(pf, IA)
+>>> IA.providedBy(pf)
+True
+>>> pf()
+True

@@ -26,7 +26,7 @@ AttributeError: 'dict' object has no attribute '__provides__'
 
 >>> from sparc.proxy import IZopeInterfaceProviderProxy
 >>> provider = component.getUtility(IZopeInterfaceProviderProxy)
->>> p = component.getUtility(IZopeInterfaceProviderProxy)(mybuiltin)
+>>> p = provider(mybuiltin)
 >>> interface.alsoProvides(p, IA)
 >>> IA.providedBy(p)
 True

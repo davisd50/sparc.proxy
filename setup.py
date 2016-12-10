@@ -5,7 +5,7 @@ version = '0.0.1'
 
 setup(name='sparc.proxy',
       version=version,
-      description="Configuration components for the SPARC platform",
+      description="Object proxy components for the SPARC platform",
       long_description=open("README.md").read() + "\n" +
                        open("HISTORY.txt").read(),
       # Get more strings from

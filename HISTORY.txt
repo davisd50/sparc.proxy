@@ -13,3 +13,8 @@
 ++++++++++++++++++
 
 * leverage new sparc.testing setuptools integrations
+
+0.0.4
+++++++++++++++++++
+
+* fix testing reference

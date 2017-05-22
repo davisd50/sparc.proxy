@@ -8,3 +8,8 @@
 
 * simplify package dependency requirements
 * add Travis CI configuration
+
+0.0.3
+++++++++++++++++++
+
+* leverage new sparc.testing setuptools integrations

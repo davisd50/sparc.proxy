@@ -1,7 +1,0 @@
-#http://dist.plone.org/versions/zopetoolkit-1-0-8-ztk-versions.cfg - Plone 5 compatible
-setuptools
-zope.testing
-zope.testrunner
-zope.component >= 3.9.5
-zope.interface >= 3.6.7
-zope.proxy >= 3.6.1

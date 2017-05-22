@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.0.1'
+version = '0.0.2'
 
 setup(name='sparc.proxy',
       version=version,
@@ -15,6 +15,7 @@ setup(name='sparc.proxy',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
+        'Framework :: Zope3',
         "Programming Language :: Python :: 2",
         'Programming Language :: Python :: 2.7',
         "Programming Language :: Python :: 3"
